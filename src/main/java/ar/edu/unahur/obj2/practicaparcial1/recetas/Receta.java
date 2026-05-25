@@ -15,30 +15,31 @@ public class Receta implements IReceta {
 
 //***************************************************
 
+    @Override
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
+    @Override
     public String getAutor() {
-        return autor;
+        return this.autor;
     }
 
-    public Integer getValorNutricionalBase() {
-        return valorNutricionalBase;
+    @Override
+    public Integer getValorNutricional() {
+        return this.valorNutricionalBase;
     }
 
+    @Override
     public Integer getAnnosDeTradicion() {
-        return annosDeTradicion;
+        return this.annosDeTradicion;
     }
 
+    @Override
     public Boolean esTradicional() {
-        return Boolean.valueOf(annosDeTradicion > 20);
+        return Boolean.valueOf(this.annosDeTradicion >= 20);
     }
 
 //***************************************************
 
-    @Override
-    public Integer calcularValorNutricionalTotal() {
-        return this.valorNutricionalBase;
-    }
 }
