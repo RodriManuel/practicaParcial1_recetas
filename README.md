@@ -40,10 +40,12 @@ Además, a cada receta se la puede "customizar" según decisión del nutricionis
 - frutos secos: 594
 
 ## 👥 Clientes 
+
 De los clientes solo nos interesa conocer su **DNI** 🪪 y el **criterio** de receta que le gusta. Cada cliente puede cambiar su criterio cuando lo desee.  
 Su **DNI, en cambio, nunca se puede cambiar**.  
 Por otro lado, también lleva el registro de las **recetas recibidas** 📜.
 Cada cliente nos debe poder decir la lista de sus recetas incluyendo el valor total nutricional de cada una.
+
 ---
 
 ## 👨‍🍳 El Nutricionista
