@@ -38,4 +38,8 @@ public class Cliente {
         this.registroDeRecetasRecibidas.add(receta);
     }
 //***************************************************
+
+    public Boolean leGustaLaReceta(IReceta receta) {
+        return Boolean.valueOf(this.criterioDeReceta.leGusta(receta));
+    }
 }
