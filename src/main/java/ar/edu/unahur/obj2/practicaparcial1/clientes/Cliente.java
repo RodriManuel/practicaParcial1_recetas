@@ -27,14 +27,15 @@ public class Cliente {
     }
 
     public List<IReceta> getRegistroDeRecetasRecibidas() {
-        return registroDeRecetasRecibidas;
+        return new ArrayList<>(registroDeRecetasRecibidas);
     }
 
     public void cambiarCriterioDeReceta(ICriterio criterioDeReceta) {
         this.criterioDeReceta = criterioDeReceta;
     }
-
+    
+    public void recibirReceta(IReceta receta) {
+        this.registroDeRecetasRecibidas.add(receta);
+    }
 //***************************************************
-
-
 }
