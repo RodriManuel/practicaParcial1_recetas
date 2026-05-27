@@ -38,10 +38,10 @@ public class Nutricionista {
     public void visitarCliente(Cliente cliente) {
         IReceta batidoMagico = new Receta("Batido Mágico", nombre, 2000, 0)
         
-        IReceta recetaAdecuada = this.recetasDisponibles.stream()
-                                                         .filter(r -> Cliente.leGustaLaReceta(r))
-                                                         .findFirst();
-                                                         .orElse(batidoMagico);
+        IReceta recetaAdecuada = recetasDisponibles.stream()
+                                                   .filter(r -> cliente.leGustaLaReceta(r))
+                                                   .findFirst()
+                                                   .orElse(batidoMagico);
 
         cliente.recibirReceta(recetaAdecuada);
     }
