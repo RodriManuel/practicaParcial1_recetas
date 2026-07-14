@@ -36,7 +36,7 @@ public class Nutricionista {
 //***************************************************
 
     public void visitarCliente(Cliente cliente) {
-        IReceta batidoMagico = new Receta("Batido Mágico", nombre, 2000, 0)
+        IReceta batidoMagico = new Receta("Batido Mágico", nombre, 2000, 0);
         
         IReceta recetaAdecuada = recetasDisponibles.stream()
                                                    .filter(r -> cliente.leGustaLaReceta(r))
