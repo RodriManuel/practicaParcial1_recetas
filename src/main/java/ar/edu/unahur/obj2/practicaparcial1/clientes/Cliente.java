@@ -4,42 +4,43 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.unahur.obj2.practicaparcial1.criterios.ComeTutti;
-import ar.edu.unahur.obj2.practicaparcial1.criterios.ICriterio;
+import ar.edu.unahur.obj2.practicaparcial1.criterios.CriterioStrategy;
 import ar.edu.unahur.obj2.practicaparcial1.recetas.IReceta;
 
 public class Cliente {
-    private final Integer DNI;
-    private ICriterio criterioDeReceta = new ComeTutti();
-    private List<IReceta> registroDeRecetasRecibidas = new ArrayList<>();
+    private final Integer dni;
+    private CriterioStrategy criterioPreferido = new ComeTutti();
+    private List<IReceta> registroDeRecetas = new ArrayList<>();
 
-    public Cliente(Integer dNI) {
-        DNI = dNI;
+    public Cliente(Integer dni, CriterioStrategy criterioPreferido) {
+        this.dni = dni;
     }
 
-//***************************************************
+//*************************************************
 
-    public Integer getDNI() {
-        return DNI;
-    }
-
-    public ICriterio getCriterioDeReceta() {
-        return criterioDeReceta;
+    public Integer getDni() {
+        return dni;
     }
 
-    public List<IReceta> getRegistroDeRecetasRecibidas() {
-        return new ArrayList<>(registroDeRecetasRecibidas);
+    public CriterioStrategy getCriterioPreferido() {
+        return criterioPreferido;
     }
 
-    public void cambiarCriterioDeReceta(ICriterio criterioDeReceta) {
-        this.criterioDeReceta = criterioDeReceta;
+    public List<IReceta> getRegistroDeRecetas() {
+        return new ArrayList<>(registroDeRecetas);
     }
-    
-    public void recibirReceta(IReceta receta) {
-        this.registroDeRecetasRecibidas.add(receta);
+
+    public void cambiarCriterioPreferido(CriterioStrategy nuevoCriterioPreferido) {
+        criterioPreferido = nuevoCriterioPreferido;
     }
-//***************************************************
+
+//*************************************************
 
     public Boolean leGustaLaReceta(IReceta receta) {
-        return Boolean.valueOf(this.criterioDeReceta.leGusta(receta));
+        return criterioPreferido.leGusta(receta);
+    }
+
+    public void recibirReceta(IReceta receta) {
+        registroDeRecetas.add(receta);
     }
 }

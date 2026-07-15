@@ -4,20 +4,12 @@ import java.util.List;
 
 import ar.edu.unahur.obj2.practicaparcial1.recetas.IReceta;
 
-public class Premium implements ICriterio {
+public class Premium implements CriterioStrategy{
     private List<String> autoresPreferidos;
-
-    public Premium(List<String> autoresPreferidos) {
-        this.autoresPreferidos = autoresPreferidos;
-    }
-
-//***************************************************
 
     @Override
     public Boolean leGusta(IReceta receta) {
-        String autorDeEstaReceta = receta.getAutor();
-
-        return Boolean.valueOf(autoresPreferidos.contains(autorDeEstaReceta));
+        return Boolean.valueOf(autoresPreferidos.contains(receta.getAutor()));
     }
-    
+
 }

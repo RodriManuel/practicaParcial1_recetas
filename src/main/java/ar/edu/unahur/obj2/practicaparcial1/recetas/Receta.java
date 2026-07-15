@@ -1,45 +1,45 @@
 package ar.edu.unahur.obj2.practicaparcial1.recetas;
 
 public class Receta implements IReceta {
-    protected String nombre;
-    protected String autor;
-    protected Integer valorNutricionalBase;
-    protected Integer annosDeTradicion;
-
-    public Receta(String nombre, String autor, Integer valorNutricionalBase, Integer annosDeTradicion) {
+    private String nombre;
+    private String autor;
+    private Double valorNutricionalBase;
+    private Integer annosDeTradicion;
+    
+    public Receta(String nombre, String autor, Double valorNutricionalBase, Integer annosDeTradicion) {
         this.nombre = nombre;
         this.autor = autor;
         this.valorNutricionalBase = valorNutricionalBase;
         this.annosDeTradicion = annosDeTradicion;
     }
 
-//***************************************************
+//*************************************************
 
     @Override
-    public String getNombre() {
-        return this.nombre;
+    public Integer getAnnosDeTradicion() {
+        return annosDeTradicion;
     }
 
     @Override
     public String getAutor() {
-        return this.autor;
+        return autor;
     }
 
     @Override
-    public Integer getValorNutricional() {
-        return this.valorNutricionalBase;
+    public String getNombre() {
+        return nombre;
     }
 
     @Override
-    public Integer getAnnosDeTradicion() {
-        return this.annosDeTradicion;
+    public Double getValorNutricionalBase() {
+        return valorNutricionalBase;
     }
-
+  
     @Override
     public Boolean esTradicional() {
-        return Boolean.valueOf(this.annosDeTradicion >= 20);
+        return this.getAnnosDeTradicion() >= 20;
     }
 
-//***************************************************
-
+//*************************************************
+ 
 }

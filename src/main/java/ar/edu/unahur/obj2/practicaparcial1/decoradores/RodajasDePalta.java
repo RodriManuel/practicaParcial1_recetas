@@ -8,15 +8,13 @@ public class RodajasDePalta extends IngredientesDecorator {
         super(receta);
     }
 
-//***************************************************
-
     @Override
-    public String getNombreDeIngrediente() {
-        return "rodaja de palta";
+    public String getNombreIngredienteExtra() {
+        return "Rodajas de Palta";
     }
 
     @Override
-    public Integer getValorNutricionalDeIngrediente() {
-        return 160;
+    public Double getValorNutricionalIngredienteExtra() {
+        return 160.0;
     }
 }

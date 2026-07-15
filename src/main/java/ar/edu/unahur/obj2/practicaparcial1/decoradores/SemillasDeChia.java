@@ -8,15 +8,14 @@ public class SemillasDeChia extends IngredientesDecorator {
         super(receta);
     }
 
-//***************************************************    
-
     @Override
-    public String getNombreDeIngrediente() {
-        return "semillas de chia";
+    public String getNombreIngredienteExtra() {
+        return "Semillas de Chia";
     }
 
     @Override
-    public Integer getValorNutricionalDeIngrediente() {
-        return 490;
+    public Double getValorNutricionalIngredienteExtra() {
+        return 490.0;
     }
+
 }

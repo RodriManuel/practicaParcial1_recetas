@@ -3,48 +3,38 @@ package ar.edu.unahur.obj2.practicaparcial1.decoradores;
 import ar.edu.unahur.obj2.practicaparcial1.recetas.IReceta;
 
 public abstract class IngredientesDecorator implements IReceta {
-    private final IReceta receta;
+    private IReceta receta;
 
     public IngredientesDecorator(IReceta receta) {
         this.receta = receta;
     }
 
-//***************************************************
-
-    public IReceta getReceta() {
-        return receta;
-    }
-
     @Override
     public Boolean esTradicional() {
-        return this.receta.esTradicional();
+        return receta.esTradicional();
     }
 
     @Override
     public Integer getAnnosDeTradicion() {
-        return this.receta.getAnnosDeTradicion();
+        return receta.getAnnosDeTradicion();
     }
 
     @Override
     public String getAutor() {
-        return this.receta.getAutor();
+        return receta.getAutor();
     }
 
     @Override
     public String getNombre() {
-        String nuevoNombre = this.receta.getNombre() + " con " + getNombreDeIngrediente();
-        return nuevoNombre;
+        return receta.getNombre() + getNombreIngredienteExtra();
     }
 
     @Override
-    public Integer getValorNutricional() {
-        Integer nuevoValor = this.receta.getValorNutricional() + getValorNutricionalDeIngrediente();
-        return nuevoValor;
+    public Double getValorNutricionalBase() {
+        return receta.getValorNutricionalBase() + getValorNutricionalIngredienteExtra();
     }
 
-//***************************************************
+    public abstract String getNombreIngredienteExtra();
 
-    public abstract String getNombreDeIngrediente();
-
-    public abstract Integer getValorNutricionalDeIngrediente();
+    public abstract Double getValorNutricionalIngredienteExtra();
 }
