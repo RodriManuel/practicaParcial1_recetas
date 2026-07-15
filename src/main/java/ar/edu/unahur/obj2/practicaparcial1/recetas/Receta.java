@@ -13,8 +13,6 @@ public class Receta implements IReceta {
         this.annosDeTradicion = annosDeTradicion;
     }
 
-//*************************************************
-
     @Override
     public Integer getAnnosDeTradicion() {
         return annosDeTradicion;
@@ -38,8 +36,5 @@ public class Receta implements IReceta {
     @Override
     public Boolean esTradicional() {
         return this.getAnnosDeTradicion() >= 20;
-    }
-
-//*************************************************
- 
+    } 
 }

@@ -16,8 +16,6 @@ public class Cliente {
         this.dni = dni;
     }
 
-//*************************************************
-
     public Integer getDni() {
         return dni;
     }
@@ -33,8 +31,6 @@ public class Cliente {
     public void cambiarCriterioPreferido(CriterioStrategy nuevoCriterioPreferido) {
         criterioPreferido = nuevoCriterioPreferido;
     }
-
-//*************************************************
 
     public Boolean leGustaLaReceta(IReceta receta) {
         return criterioPreferido.leGusta(receta);

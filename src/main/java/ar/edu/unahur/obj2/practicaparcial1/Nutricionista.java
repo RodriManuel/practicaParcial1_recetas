@@ -36,5 +36,4 @@ public class Nutricionista {
 
         cliente.recibirReceta(recetaAdecuada);
     }
-    
 }
