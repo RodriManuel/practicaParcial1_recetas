@@ -12,7 +12,7 @@ public class Cliente {
     private CriterioStrategy criterioPreferido = new ComeTutti();
     private List<IReceta> registroDeRecetas = new ArrayList<>();
 
-    public Cliente(Integer dni, CriterioStrategy criterioPreferido) {
+    public Cliente(Integer dni) {
         this.dni = dni;
     }
 
